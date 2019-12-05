@@ -49,6 +49,10 @@
     {% set type = getType(body) | escape  %}
     {% set safe = type | safe %}
     {{ safe }}
+    Name
+    {{ safe["name"] }}
+    Safe
+    {{ safe.name }}
   {% endfor %}
 {% endif %}
 
