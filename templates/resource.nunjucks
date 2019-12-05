@@ -48,6 +48,9 @@
   {% for body in method.body %}
     {% set type = body.type  %}
       {{ type.properties }}
+      {% for param in type.properties %}
+        {% include "body-parameter-table.nunjucks" %}
+      {% endfor %}
     {% for param in type %}
     {% endfor %}
   {% endfor %}
