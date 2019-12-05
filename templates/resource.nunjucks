@@ -43,13 +43,18 @@
 {% include "parameter-table.nunjucks" %}
 {% endfor %}
 {% endif %}
+
 {% if (method.body | length != 0) %}
-{% for example in body.examples %}
-  {% for param in getType(body) -%}
-    {{ param }}
-  {%- endfor %}
-{% endfor %}
+  <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
+  {% for body in method.body %}
+    {% for bodyparams in getType(body) %}
+      {{ bodyparams }}
+    {% endfor %}
+  {% endfor %}
 {% endif %}
+
+
+{% if (method.queryParameters | length) != 0 %}
 <br/>
 <p><strong><em><big>Body Parameters</big></em></strong></p>
 <table>
