@@ -47,7 +47,7 @@
 {% if (method.body | length != 0) %}
   <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
   {% set typeDefinitions = getTypeDefinitions() %}
-  {{ typeDefinitions }}
+  {{ getTypeDefinitions() }}
   {% for type in typeDefinitions %}
       {{ type }}
   {% endfor %}
