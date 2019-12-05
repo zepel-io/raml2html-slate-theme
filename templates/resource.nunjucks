@@ -48,7 +48,7 @@
   {% for body in method.body %}
     {% set type = body.type  %}
     {% for param in type %}
-      {{ param }}
+      {{% param %}}
     {% endfor %}
   {% endfor %}
 {% endif %}
