@@ -1,5 +1,10 @@
+<tr>
+  <td>{{ param.key }}</td>
+  <td>
+    {% markdown -%}
+    {{ param.description }}
+    {%- endmarkdown %}
+  </td>
+  <td>{{ param.type }}</td>
+</tr>
 
-<p>
-  <strong>{{ param }}</strong></br>
-  
-</p>
