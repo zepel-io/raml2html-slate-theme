@@ -47,7 +47,7 @@
   <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
   {% for body in method.body %}
     {% set type = body.type  %}
-      {{ type }}
+      {{ type.name }}
     {% for param in type %}
     {% endfor %}
   {% endfor %}
