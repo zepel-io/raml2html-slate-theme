@@ -48,8 +48,8 @@
   <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
   {% for body in method.body %}
     {% for type in getType(body) %}
-    {% for param in getType(body) %}
-      {{ param.name }}
+    {% for param in type %}
+      {{ param }}
     {% endfor %}
     {% endfor %}
   {% endfor %}
