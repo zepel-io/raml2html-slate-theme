@@ -6,5 +6,6 @@
     {%- endmarkdown %}
   </td>
   <td>{{ param.type }}</td>
+  <td>{{ param.required }}</td>
 </tr>
 
