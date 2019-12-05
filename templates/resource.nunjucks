@@ -48,7 +48,7 @@
   {% for body in method.body %}
     {% set type = getType(body) | escape  %}
     {% set dump = type | dump %}
-    {{ dump[0]}}
+    {{ dump['val']}}
   {% endfor %}
 {% endif %}
 
