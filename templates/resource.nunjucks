@@ -47,8 +47,8 @@
 {% if (method.body | length != 0) %}
   <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
   {% for body in method.body %}
-    {% for bodyparams in getProperties(body) %}
-      {{ bodyparams }}
+    {% for type in getType(body) %}
+      {{ type }}
     {% endfor %}
   {% endfor %}
 {% endif %}
