@@ -45,7 +45,6 @@
 {% endif %}
 {% if (method.body | length != 0) %}
 {% for example in body.examples %}
-{% if (method.queryParameters | length) != 0 %}
   {% for param in getType(body) -%}
     {{ param }}
   {%- endfor %}
