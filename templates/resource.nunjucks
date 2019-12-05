@@ -69,21 +69,11 @@
 
 {% if (method.queryParameters | length) != 0 %}
 <br/>
-<p><strong><em><big>Body Parameters</big></em></strong></p>
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-  </thead>
-  <tbody>
-    {% for param in method.queryParameters %}
-    {% include "body-parameter-table.nunjucks" %}
-    {% endfor %}
-    {% endif %}
-  </tbody>
-</table>
+<p><strong><em><big>Query Parameters</big></em></strong></p>
+{% for param in method.queryParameters %}
+{% include "parameter-table.nunjucks" %}
+{% endfor %}
+{% endif %}
 
 {% if getResponseHeaders(method) | length != 0 %}
 <br/>
