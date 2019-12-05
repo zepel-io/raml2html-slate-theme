@@ -49,7 +49,7 @@
   {% for body in method.body %}
     {% for type in getType(body) %}
     {% for param in getType(body) %}
-      {{ param }}
+      {{ param.name }}
     {% endfor %}
     {% endfor %}
   {% endfor %}
