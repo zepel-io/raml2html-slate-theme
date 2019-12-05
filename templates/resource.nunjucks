@@ -48,7 +48,7 @@
   {% for body in method.body %}
     {% set type = getType(body) | escape  %}
     {% set safe = type | safe %}
-    {{ safe }}
+    {{ JSON.parse(safe) }}
   
   {% endfor %}
 {% endif %}
