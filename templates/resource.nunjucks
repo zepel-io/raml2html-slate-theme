@@ -48,7 +48,7 @@
   {% for body in method.body %}
     {% set type = getType(body) | escape  %}
     {% set safe = type | safe %}
-    {{ safe.name }}
+    {{ Object.keys(safe) }}
 {% set json = 
     { "name": "type", "displayName": "type", "typePropertyKind": "TYPE_EXPRESSION", "type": "object", "properties": [ { "name": "id", "displayName": "id", "typePropertyKind": "TYPE_EXPRESSION", "type": "string", "required": false, "description": "Project ID should be in UUID format.", "examples": [ { "value": "646136d5-f77f-41c6-bca3-4d347fe6d54o", "strict": true, "name": null, "structuredValue": "646136d5-f77f-41c6-bca3-4d347fe6d54o" } ], "key": "id" }, { "name": "title", "displayName": "title", "typePropertyKind": "TYPE_EXPRESSION", "type": "string", "required": true, "description": "Project title should be a string and with limit of 80 characters", "examples": [ { "value": "Client Project", "strict": true, "name": null, "structuredValue": "Client Project" } ], "key": "title" }, { "name": "description", "displayName": "description", "typePropertyKind": "TYPE_EXPRESSION", "type": "string", "required": true, "description": "Project description should be a string", "examples": [ { "value": "Description", "strict": true, "name": null, "structuredValue": "Description" } ], "key": "description" } ] }
     %}
