@@ -46,9 +46,9 @@
 
 {% if (method.queryParameters | length) != 0 %}
 <br/>
-<p><strong><em><big>Query Parameters</big></em></strong></p>
+<p><strong><em><big>Body Parameters</big></em></strong></p>
 {% for param in method.queryParameters %}
-{% include "parameter-table.nunjucks" %}
+{% include "body-parameter-table.nunjucks" %}
 {% endfor %}
 {% endif %}
 
