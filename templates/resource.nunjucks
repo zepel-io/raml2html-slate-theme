@@ -49,6 +49,7 @@
   {% for body in method.body %}
     {% for key, bodyparams in getType(body) %}
       {{ bodyparams }}
+      {{ key }}
     {% endfor %}
   {% endfor %}
 {% endif %}
