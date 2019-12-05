@@ -47,9 +47,8 @@
   <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
   {% for body in method.body %}
     {% set type = getType(body) | escape  %}
-    {% set safe = type | safe %}
-    {{ JSON.parse(safe) }}
-  
+    {% set safe = type %}
+    {{ safe }}
   {% endfor %}
 {% endif %}
 
