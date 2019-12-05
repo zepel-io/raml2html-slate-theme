@@ -43,27 +43,31 @@
 {% include "parameter-table.nunjucks" %}
 {% endfor %}
 {% endif %}
+
+
 {% if (method.body | length != 0) %}
-  <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
+  <br/>
+  <blockquote><h3 class="toc-ignore">Body Parameters</h3></blockquote>
   <table>
-  <thead>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-  </thead>
-  <tbody>
-  {% for body in method.body %}
-    {% set type = body.type  %}
-      {{ type.properties }}
-      {% for param in type.properties %}
-        {% include "body-parameter-table.nunjucks" %}
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+    {% if (method.body | length) != 0 %}
+      {% for body in method.body %}
+        {% if (body.type | length) != 0 %}
+          {% set type = body.type  %}
+            {% for param in type.properties %}
+              {% include "body-parameter-table.nunjucks" %}
+            {% endfor %}
+          {% endif %}
       {% endfor %}
-    {% for param in type %}
-    {% endfor %}
-  {% endfor %}
-  </tbody>
-</table>
+    {% endif %}
+    </tbody>
+  </table>
 {% endif %}
 
 
