@@ -49,9 +49,18 @@
     {% set type = getType(body) | escape  %}
     {% set safe = type | safe %}
     {{ safe }}
-      {% for item in safe %}
-        {{ item }}
-      {% endfor %}
+{% set json = 
+    {
+      "firstName": "John",
+      "basket": {
+        "banana": 7,
+        "orange": 8
+      },
+      "tags": ["customer", "vip"]
+    }
+    %}
+  JSON 
+  {{ json.firstName }}
 
 
     Name
