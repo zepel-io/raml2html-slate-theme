@@ -1,0 +1,44 @@
+
+<p>
+  <strong>{{ param.key }}</strong></br>
+  {% markdown -%}
+  {{ param.description }}
+  {%- endmarkdown %}
+</p>
+
+<table>
+  <thead>
+    <th>Hello</th>
+    <th style="width: 99%">Value</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>required</em></td>
+      <td>{{ param.required }}</td>
+    </tr>
+    <tr>
+      <td><em>type</em></td>
+      <td>{{ param.type }}</td>
+    </tr>
+    {% if param.format -%}
+    <tr>
+      <td><em>format</em></td>
+      <td>{{ param.format }}</td>
+    </tr>
+    {% endif -%}
+    {% if param.enum -%}
+    {%- set comma = joiner() -%}
+    <tr>
+      <td><em>oneOf</em></td>
+      <td>{% for value in param.enum %}{{ comma() }} {{ value }}{% endfor %}</td>
+    </tr>
+    {% endif -%}
+    {% if param.examples -%}
+    {%- set comma = joiner() -%}
+    <tr>
+      <td><em>examples</em></td>
+      <td>{% for example in param.examples %}{{ comma() }}<code>{{ example.value }}</code>{% endfor %}</td>
+    </tr>
+    {% endif -%}
+  </tbody>
+</table>
