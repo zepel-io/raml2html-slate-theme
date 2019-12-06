@@ -32,7 +32,7 @@
 <br/>
 <p><strong><em><big>URI Parameters</big></em></strong></p>
 {% set uriParameters = method.allUriParameters %}
-{% include "./parameter-table.nunjucks" %}
+{% include "./uri-parameter-table.nunjucks" %}
 {% endif %}
 
 {% if (method.headers | length) != 0 %}
