@@ -46,7 +46,7 @@
 
 {% if (method.body | length != 0) %}
   <br/>
-  <blockquote><h3 class="toc-ignore">Body Parameters</h3></blockquote>
+  <h3 class="toc-ignore">Body Parameters</h3>
   <table>
     <thead>
       <th>Name</th>
