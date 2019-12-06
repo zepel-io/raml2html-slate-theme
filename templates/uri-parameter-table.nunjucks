@@ -1,5 +1,5 @@
-{% for params in param -%}
-{{ params }}
+{% for param in uriParameters -%}
+{{ param }}
 {% endfor %}
 /*
 <tr>
