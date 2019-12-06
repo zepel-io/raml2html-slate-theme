@@ -6,7 +6,7 @@
       <th>Required</th>
     </thead>
     <tbody>
-      {% for param in response -%}
+      {% for param in responseHeaders -%}
         <tr>
           <td>{{ param.key }}</td>
           <td>
