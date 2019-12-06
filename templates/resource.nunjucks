@@ -81,9 +81,8 @@
 {% if getResponseHeaders(method) | length != 0 %}
 <br/>
 <p><strong><em><big>Response Headers</big></em></strong></p>
-{% for param in getResponseHeaders(method) -%}
-{% include "parameter-table.nunjucks" %}
-{%- endfor %}
+{% responseHeaders = getResponseHeaders(method) %}
+{% include "response-parameter-table.nunjucks" %}
 {% endif %}
 
 {% if (method.responses | length) != 0 %}
