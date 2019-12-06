@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Required</th>
+    </thead>
+    <tbody>
+      {% for param in headerParams -%}
+        <tr>
+          <td>{{ param.key }}</td>
+          <td>
+            {% markdown -%}
+            {{ param.description }}
+            {%- endmarkdown %}
+          </td>
+          <td>{{ param.type }}</td>
+          <td>{{ param.required }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>

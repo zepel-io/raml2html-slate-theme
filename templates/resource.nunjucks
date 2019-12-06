@@ -38,9 +38,8 @@
 {% if (method.headers | length) != 0 %}
 <br/>
 <p><strong><em><big>Header Parameters</big></em></strong></p>
-{% for param in method.headers %}
-{% include "parameter-table.nunjucks" %}
-{% endfor %}
+{% set headerParams = method.headers %}
+{% include "header-parameter-table.nunjucks" %}
 {% endif %}
 
 
@@ -188,6 +187,7 @@
 </div>
         {% endfor %}
       {% endif %}
+      <!--
       {% if hasType(body) %}
         <div class="languagebox {{ getLanguage(body.key) }}">
           <details>
@@ -196,6 +196,7 @@
           </details>
         </div>
       {% endif %}
+      -->
     {% endfor %}
   {% endif %}
 {% endfor %}
