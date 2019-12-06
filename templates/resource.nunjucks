@@ -126,7 +126,7 @@
   </code></pre>
 </div>
 {% endif %}
-<!--
+
 {% if (method.body | length != 0) %}
 <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
 {% for body in method.body %}
@@ -155,7 +155,6 @@
   {% endif %}
 {% endfor %}
 {% endif %}
--->
 {% set responseHeaders = getResponseHeaders(method) %}
 {% if ((responseHeaders | length != 0) and hasExamples(responseHeaders)) %}
 <blockquote><h3 class="toc-ignore">RESPONSE HEADERS</h3></blockquote>
