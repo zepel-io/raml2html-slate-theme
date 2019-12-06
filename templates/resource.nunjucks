@@ -126,7 +126,7 @@
   </code></pre>
 </div>
 {% endif %}
-
+<!--
 {% if (method.body | length != 0) %}
 <blockquote><h3 class="toc-ignore">REQUEST BODY</h3></blockquote>
 {% for body in method.body %}
@@ -168,7 +168,7 @@
 </code></pre>
 </div>
 {% endif %}
-
+-->
 {% for response in method.responses %}
   {% if (response.code >= 200 and response.code < 300) %}
     <blockquote><h3 h3 class="toc-ignore">RESPONSE BODY</h3></blockquote>
