@@ -1,0 +1,16 @@
+{% for params in param -%}
+{{ params }}
+{% endfor %}
+/*
+<tr>
+  <td>{{ param.key }}</td>
+  <td>
+    {% markdown -%}
+    {{ param.description }}
+    {%- endmarkdown %}
+  </td>
+  <td>{{ param.type }}</td>
+  <td>{{ param.required }}</td>
+</tr>
+*/
+

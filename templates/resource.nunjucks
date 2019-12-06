@@ -31,9 +31,7 @@
 {% if method.allUriParameters | length != 0 %}
 <br/>
 <p><strong><em><big>URI Parameters</big></em></strong></p>
-{% for param in method.allUriParameters -%}
-{% include "./parameter-table.nunjucks" %}
-{% endfor %}
+{% include "./parameter-table.nunjucks" with  method.allUriParameters %}
 {% endif %}
 
 {% if (method.headers | length) != 0 %}
