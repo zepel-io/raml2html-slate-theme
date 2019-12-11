@@ -271,6 +271,9 @@ under the License.
           searchResults.append("<li class='search-result-li'><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
         });
         highlight.call(this);
+        $(".search-result-li").on("click", function() {
+          searchResults.removeClass('visible');
+        });
       } else {
         searchResults.html('<li></li>');
         $('.search-results li').text('No Results Found for "' + this.value + '"');
@@ -280,14 +283,6 @@ under the License.
       searchResults.removeClass('visible');
     }
   }
-
-  // Onclick search result
-  $(function() {
-    $(".search-result-li").on("click", function() {
-      alert('sd');
-      searchResults.removeClass('visible');
-    });
-  });
 
   function highlight() {
     if (this.value) content.highlight(this.value, highlightOpts);
