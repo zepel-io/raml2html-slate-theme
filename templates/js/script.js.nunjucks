@@ -287,7 +287,6 @@ under the License.
       searchResults.removeClass('visible');
     });
   });
-})(window);
 
   function highlight() {
     if (this.value) content.highlight(this.value, highlightOpts);
