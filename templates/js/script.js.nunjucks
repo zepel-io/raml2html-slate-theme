@@ -274,7 +274,6 @@ under the License.
         $(".search-result-li").on("click", function() {
           searchResults.removeClass('visible');
           $("#input-search").val('');
-          content.unhighlight(highlightOpts);
         });
       } else {
         searchResults.html('<li></li>');
