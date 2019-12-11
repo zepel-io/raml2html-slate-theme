@@ -284,6 +284,7 @@ under the License.
   // Onclick search result
   $(function() {
     $(".search-result-li").on("click", function() {
+      alert('sd');
       searchResults.removeClass('visible');
     });
   });
