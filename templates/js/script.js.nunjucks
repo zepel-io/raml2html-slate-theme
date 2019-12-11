@@ -268,7 +268,7 @@ under the License.
         searchResults.empty();
         $.each(results, function (index, result) {
           var elem = document.getElementById(result.ref);
-          searchResults.append("<li><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
+          searchResults.append("<li class='search-result-li'><a href='#" + result.ref + "'>" + $(elem).text() + "</a></li>");
         });
         highlight.call(this);
       } else {
@@ -280,6 +280,15 @@ under the License.
       searchResults.removeClass('visible');
     }
   }
+
+  // Onclick search result
+  $(function() {
+    $(".search-result-li").on("click", function() {
+      searchResults.removeClass('visible');
+      searchResults.empty();
+    });
+  });
+})(window);
 
   function highlight() {
     if (this.value) content.highlight(this.value, highlightOpts);
