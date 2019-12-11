@@ -273,7 +273,6 @@ under the License.
         highlight.call(this);
         $(".search-result-li").on("click", function() {
           searchResults.removeClass('visible');
-          $("#input-search").val('');
         });
       } else {
         searchResults.html('<li></li>');
