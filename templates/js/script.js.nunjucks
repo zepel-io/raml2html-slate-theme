@@ -285,7 +285,6 @@ under the License.
   $(function() {
     $(".search-result-li").on("click", function() {
       searchResults.removeClass('visible');
-      searchResults.empty();
     });
   });
 })(window);
