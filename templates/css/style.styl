@@ -104,11 +104,15 @@ embossed-bg()
     li
       margin: 1em $nav-padding
       line-height: 1
+      &:hover
+        background: #f1f1f1;
+        border-left: 3px solid #f0f1f2;
+        border-radius: 0 30px 30px 0;
     a
       color: $nav-text
       text-decoration: none
       &:hover
-        text-decoration: underline
+        text-decoration: none
   .tocify-item>a, .toc-footer li
     padding: 0 $nav-padding 0 $nav-padding
     display: block
