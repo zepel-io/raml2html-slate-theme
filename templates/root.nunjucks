@@ -32,6 +32,11 @@
         alert(googleClientId)
       </script>
     {% endif %}
+    {% if title %}
+      <script>
+        alert(title)
+      </script>
+    {% endif %}
   </head>
 
   <body class="">
