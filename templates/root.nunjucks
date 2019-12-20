@@ -27,6 +27,11 @@
         });
       </script>
     {% endif %}
+    {% if googleClientId %}
+      <script>
+        alert(googleClientId)
+      </script>
+    {% endif %}
   </head>
 
   <body class="">
