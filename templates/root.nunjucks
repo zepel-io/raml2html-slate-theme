@@ -20,6 +20,15 @@
     {% include "./js/lib/lunr.js.nunjucks" %}
     {% include "./js/script.js.nunjucks" %}
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112002143-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-112002143-1');
+    </script>
+
     {% if languageTabs %}
       <script>
         $(function() {
