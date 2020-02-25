@@ -37,17 +37,6 @@
   </script>
   <!-- End Segment -->
   {% endif %}
-
-    {% if includeGA %}
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{segmentId}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{segmentId}}');
-</script>
-    {% endif %}
   </head>
 
   <body class="">
