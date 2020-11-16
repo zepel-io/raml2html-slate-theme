@@ -71,13 +71,13 @@
         </div>
         <ul class="search-results"></ul>
       {% endif %}
-      <div id="toc">
-      </div>
       <div id="version-selector">
-        <select id="version-selector">
+        <select onchange="switchVersions()">
           <option value ="zero" >Zero</option>
           <option value ="first" >First</option>
         </select>
+      </div>
+      <div id="toc">
       </div>
     </div>
     <div class="page-wrapper">
