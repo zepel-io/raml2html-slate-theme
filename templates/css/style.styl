@@ -10,6 +10,48 @@
   background-color: $code-bg;
 }
 
+#version-selector select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding: 0 1.42857143em;
+  padding-right: 45px;
+  width: 100%;
+  height: 40px;
+  line-height: 2.85;
+  font-weight: 400;
+  font-size: 14px;
+  color: #414042;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #d0d3d6;
+  border-radius: 6px;
+}
+
+.select-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  margin: 18px auto 0;
+  padding: 0 1.42857143em;
+  color: #6515dd;
+  pointer-events: none;
+}
+
+.select-svg {
+  width: 11px;
+  height: 5px;
+  fill: currentColor;
+  stroke-width: 1;
+}
+
 @import '_monokai'
 
 ////////////////////////////////////////////////////////////////////////////////
