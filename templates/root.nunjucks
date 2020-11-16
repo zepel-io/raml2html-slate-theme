@@ -27,26 +27,28 @@
         });
       </script>
     {% endif %}
-  <script type="text/javascript">
+    {% if displayOlderVersion %}
+      <script type="text/javascript">
 
-    function switchVersions() {
-      var version = $('#version-selector select').val();
-      location.href = '/api/' + version + '/';
+        function switchVersions() {
+          var version = $('#version-selector select').val();
+          location.href = '/api/' + version + '/';
 
-      return false;
-    }
+          return false;
+        }
 
-  </script>
-  {% if includeSegment %}
-  <!-- Segment -->
-  <script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-    analytics.load("{{ segmentId }}");
-    analytics.page();
-    }}();
-  </script>
-  <!-- End Segment -->
-  {% endif %}
+      </script>
+    {% endif %}
+    {% if includeSegment %}
+      <!-- Segment -->
+      <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+        analytics.load("{{ segmentId }}");
+        analytics.page();
+        }}();
+      </script>
+      <!-- End Segment -->
+    {% endif %}
   </head>
 
   <body class="">
@@ -65,18 +67,20 @@
             {%- endfor %}
           </div>
         {% endif %}
-      <div id="version-selector">
-        <div class="version-selector-label">API Documentation:</div>
-        <select onchange="switchVersions()">
-          <option value ="zero" >Zero</option>
-          <option value ="first" >First</option>
-        </select>
-        <div class="select-icon">
-          <svg class="select-svg" viewBox="0 0 11 5">
-              <path d="M7.5,9.9L7.5,9.9L6.3,8.9L2,5h1.3l4.2,3.4L11.7,5h0H13L8.7,8.9L7.5,9.9L7.5,9.9z" transform="translate(-2 -5)"></path>
-          </svg>
-      </div>
-      </div>
+      {% if displayOlderVersion %}
+        <div id="version-selector">
+          <div class="version-selector-label">API Documentation:</div>
+          <select onchange="switchVersions()">
+            <option value ="v1" >REST API v1 (Deprecated)</option>
+            <option value ="v2" >REST API v2</option>
+          </select>
+          <div class="select-icon">
+            <svg class="select-svg" viewBox="0 0 11 5">
+                <path d="M7.5,9.9L7.5,9.9L6.3,8.9L2,5h1.3l4.2,3.4L11.7,5h0H13L8.7,8.9L7.5,9.9L7.5,9.9z" transform="translate(-2 -5)"></path>
+            </svg>
+          </div>
+        </div>
+      {% endif %}
       {% if search %}
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
