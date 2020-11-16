@@ -62,6 +62,10 @@
         <ul class="search-results"></ul>
       {% endif %}
       <div id="toc">
+        <select>
+          <option value ="zero" >Zero</option>
+          <option value ="first" >First</option>
+        </select>
       </div>
     </div>
     <div class="page-wrapper">
