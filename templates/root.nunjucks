@@ -39,7 +39,6 @@
 
         setSelectorValueOnLoad = function () {
           var currentVersion = location.pathname.substring(16, 18);
-          console.log('currentVersion', currentVersion)
           var selector = document.getElementById('selector');
           selector.value = currentVersion;
         }
