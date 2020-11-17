@@ -39,7 +39,8 @@
 
         setSelectorValueOnLoad = function () {
           var currentVersion = location.pathname.substring(16, 18);
-          $('#version-selector select').value = currentVersion;
+          var selector = document.getElementById(selector);
+          selector.value = currentVersion;
         }
 
         window.onload = setSelectorValueOnLoad;
@@ -76,7 +77,7 @@
       {% if displayOlderVersion %}
         <div id="version-selector">
           <div class="version-selector-label">API Documentation:</div>
-          <select onchange="switchVersions()">
+          <select onchange="switchVersions()" id="selector">
             <option value ="v1" >REST API v1 (Deprecated)</option>
             <option value ="v2" >REST API v2</option>
           </select>
