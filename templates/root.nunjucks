@@ -37,6 +37,12 @@
           return false;
         }
 
+        setSelectorValueOnLoad = function () {
+          var currentVersion = location.pathname.substring(16, 18);
+          $('#version-selector select').value = currentVersion;
+        }
+
+        window.onload = setSelectorValueOnLoad;
       </script>
     {% endif %}
     {% if includeSegment %}
