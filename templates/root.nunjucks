@@ -27,7 +27,7 @@
         });
       </script>
     {% endif %}
-    {% if displayOlderVersion %}
+    {% if hasMultipleVersions %}
       <script type="text/javascript">
 
         function switchVersions() {
@@ -74,7 +74,7 @@
             {%- endfor %}
           </div>
         {% endif %}
-      {% if displayOlderVersion %}
+      {% if hasMultipleVersions %}
         <div id="version-selector">
           <div class="version-selector-label">API Documentation:</div>
           <select onchange="switchVersions()" id="selector">
